@@ -105,12 +105,33 @@ function getForecast(coordinates) {
   let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${api}&units=metric`;
   console.log(url);
   axios.get(url).then(showForecast);
+  console.log(url);
 }
 
 function showForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
+  console.log(response);
   let forecastElement = document.querySelector(".box-4");
+
+  let forecastHTML = `<div class="rectangle">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 4) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="card-weather">
+            <h2 class="today">${formatDay(forecastDay.dt)}</h2>
+            <h3>${Math.round(forecastDay.main.temp)}&deg;C</h3>
+            <img src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="" />
+            <p class="temperatures">${Math.round(
+              forecastDay.temp.max
+            )}&deg; ${Math.round(forecastDay.temp.min)}&deg;</p>
+          </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function FahrenheitTemperature(event) {
