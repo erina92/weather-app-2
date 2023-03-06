@@ -4,548 +4,248 @@ html {
 }
 
 .container {
-    width: 414px;
+    width: 100vw;
     height: 100vh;
-    border-radius: 40px;
     background: linear-gradient(167.44deg, #08244F 0%, #134CB5 47.38%, #0B42AB 100%);
     position: relative;
     padding: 0px;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .box-1 {
-    position: absolute;
-    left: 9.69%;
-    right: 54.37%;
-    top: 5.13%;
-    bottom: 91.72%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex: 1;
 }
 
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    width: 70%;
+}
 
 .search {
-    position: absolute;
-    left: 90%;
-    right: 9.46%;
-    top: 5.13%;
-    bottom: 91.72%;
     border: none;
     background: transparent;
-    color: white;
+    color: black;
 }
 
 #current-location {
-    position: absolute;
-    left: 105%;
-    right: 9.46%;
-    top: 20%;
-    bottom: 91.72%;
     border: none;
     background: transparent;
-    color: white;
+    color: black;
 }
 
 input {
-    width: 90%;
+    width: 100%;
     background: transparent;
     border: none
 }
 
 input:focus {
-    border-bottom: 3px solid #00ffec;
+    border-bottom: 3px solid black;
     outline: none;
 }
 
 ::placeholder {
-    color: white;
+    color: black;
 }
 
-.box-1 .date-time {
-    color: white;
-    position: absolute;
-    font-size: 18px;
-    top: 0%;
-    left: 168%;
-    font-weight: 700;
+.date-time {
+    color: black;
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 0 auto;
 }
 
-.box-1 .city {
-    color: white;
-    position: absolute;
-    font-size: 25px;
-    top: 200%;
-    left: 0%;
-    font-weight: 900;
+.city {
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 auto;
+
 }
 
 .box-2 {
-    position: absolute;
-    left: 16.31%;
-    right: 16.55%;
-    top: 6.88%;
-    bottom: 69%;
-    filter: drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.05));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .box-2 img {
     display: block;
     width: 70%;
-    position: absolute;
-    left: 18%;
-    right: 16.55%;
-    top: 45%;
-    bottom: 69%;
-    filter: drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.05));
+    margin: 0 auto;
 }
 
-.box-2 .degrees {
-    position: absolute;
-    width: 433px;
-    height: 123px;
-    left: -70px;
-    top: 268px;
-    text-align: center;
-    color: white;
-    font-size: 64px;
-    font-weight: 600;
+.box-2 .deg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
 }
 
-.box-2 .description {
-    position: absolute;
-    width: 433px;
-    height: 123px;
-    left: -76px;
-    top: 340px;
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    font-weight: 600;
-
+.deg .degrees {
+    font-size: 55px;
+    font-weight: bold;
+    color: black;
 }
 
-.box-2 .precipitations {
-    position: absolute;
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    left: 0%;
-    right: 0%;
-    top: 170%;
-    bottom: 54.43%;
-    line-height: 21px;
-    text-align: center;
+.box-2 .temp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    gap: 10px;
+    font-size: 25px;
 }
 
-.box-2 .celsius {
-    position: absolute;
-    color: white;
-    font-weight: 700;
-    font-size: 30px;
-    left: 85%;
-    top: 120%;
+.temp .ceslius,
+.fahrenheit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1em;
 }
 
 .celsius a,
 .fahrenheit a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .celsius a:hover,
 .fahrenheit a:hover {
     text-decoration: none;
-    color: darkblue;
+    color: black;
 }
 
 .celsius a:visited,
 .fahrenheit a:visited {
-    color: darkblue;
+    color: black;
 }
 
-.box-2 .fahrenheit {
-    position: absolute;
-    color: white;
-    font-weight: 700;
-    font-size: 30px;
-    left: 100%;
-    top: 120%;
+.box-2 .description {
+    color: black;
+    font-weight: bold;
+}
+
+.box-2 .description::first-letter {
+    text-transform: capitalize;
+}
+
+.box-2 .precipitations {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .box-2 .min-max {
-    position: absolute;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    left: 0%;
-    right: 0%;
-    top: 185%;
-    bottom: 54.43%;
-    line-height: 10px;
-    text-align: center;
+    display: flex;
+    gap: 10px;
+}
+
+.box-2 .min-max {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .box-3 {
-    position: absolute;
-    width: 343px;
-    height: 45px;
-    left: 40px;
-    top: 520px;
-    background: rgb(0, 16, 38, 0.3);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
     border-radius: 20px;
+    flex: 1;
 }
 
-.box-3 .fa-wind {
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 16.71px;
-    position: absolute;
-    left: 70%;
-    top: 28%;
-}
-
-.wind {
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 16.71px;
-    position: absolute;
-    left: 76%;
-    top: 28%;
-}
-
-.box-3 .fa-temperature-full {
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 16.71px;
-    position: absolute;
-    left: 6%;
-    top: 28%;
-}
-
-.pressure {
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 16.71px;
-    position: absolute;
-    left: 10%;
-    top: 28%;
-}
-
-.fa-wind {
-    margin-right: 5px;
-}
-
-.fa-temperature-full {
-    margin-right: 5px;
-}
-
-.box-3 .fa-droplet {
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 16.71px;
-    position: absolute;
-    left: 42%;
-    top: 28%;
-}
-
-.humidity {
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 16.71px;
-    position: absolute;
-    left: 48%;
-    top: 28%;
-}
-
-.fa-droplet {
-    margin-right: 5px;
+.box-3 .conditions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    gap: 20px;
 }
 
 .box-4 {
-    position: absolute;
-    width: 343px;
-    height: 217px;
-    left: 40px;
-    top: 489px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
 }
 
 .box-4 .rectangle {
-    position: absolute;
-    width: 343px;
-    height: 235px;
-    margin-top: 25%;
-    background: rgb(0, 16, 38, 0.3);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-}
-
-.box-4 .today {
-    position: absolute;
-    width: 55px;
-    height: 24px;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-left: 25px;
-    left: -35%;
-    top: -35%;
-}
-
-.box-4 .second-day {
-    position: absolute;
-    width: 55px;
-    height: 24px;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-left: 25px;
-    left: -35%;
-    top: -35%;
-    text-align: center;
-}
-
-.box-4 .third-day {
-    position: absolute;
-    width: 55px;
-    height: 24px;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-left: 25px;
-    left: -34%;
-    top: -35%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
 }
 
 .box-4 .card-weather {
-    position: absolute;
-    width: 70px;
-    height: 155px;
-    left: 135px;
-    top: 537px;
-    left: 9%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    background: rgba(37, 102, 163, 0.2);
-    border-radius: 20px;
-    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center !important;
+    background: transparent;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-.card-weather h3 {
-    color: white;
+.box-4 .card-weather h2 {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+.box-4 .card-weather .temperatures {
+    color: black;
     font-size: 18px;
-    font-weight: 400;
-    line-height: 21px;
-    position: absolute;
-    top: 8.39%;
-    left: 21.43%;
-}
-
-.card-weather img {
-    position: absolute;
-    width: 50px;
-    top: 35%;
-    left: 15%;
-}
-
-.card-weather .temperatures {
-    position: absolute;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    top: 80%;
-    left: 10%;
-}
-
-.card-weather-one {
-    position: absolute;
-    width: 70px;
-    height: 155px;
-    top: 537px;
-    left: 39%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    background: rgba(37, 102, 163, 0.2);
-    border-radius: 20px;
-    margin-top: 50px;
-}
-
-.card-weather-one h3 {
-    color: white;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 21px;
-    position: absolute;
-    top: 8.39%;
-    left: 21.43%;
-}
-
-.card-weather-one img {
-    position: absolute;
-    width: 50px;
-    top: 35%;
-    left: 15%;
-}
-
-.card-weather-one .temperatures {
-    position: absolute;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    top: 80%;
-    left: 10%;
-}
-
-.card-weather-two {
-    position: absolute;
-    width: 70px;
-    height: 155px;
-    top: 537px;
-    left: 70%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    background: rgba(37, 102, 163, 0.2);
-    border-radius: 20px;
-    margin-top: 50px;
-}
-
-.card-weather-two h3 {
-    color: white;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 21px;
-    position: absolute;
-    top: 8.39%;
-    left: 21.43%;
-}
-
-.card-weather-two img {
-    position: absolute;
-    width: 50px;
-    top: 35%;
-    left: 15%;
-}
-
-.card-weather-two .temperatures {
-    position: absolute;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    top: 80%;
-    left: 10%;
+    font-weight: bold;
 }
 
 .box-5 {
-    position: absolute;
-    top: 94.5%;
-    left: 24%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
 }
 
 .box-5 .coder {
-    color: white;
+    color: black;
     text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .box-5 .fa-github {
-    color: white;
+    color: black;
 }
 
 fa-github:hover {
     color: yellow;
-}
-
-@media only screen and (min-device-width: 414px) and (max-device-width: 896px) {
-
-    body,
-    html {
-        box-sizing: border-box;
-    }
-
-    .container {
-        width: 100vw;
-        height: 100vh;
-        border-radius: 0px;
-        background: linear-gradient(167.44deg, #08244F 0%, #134CB5 47.38%, #0B42AB 100%);
-        position: relative;
-        padding: 0px;
-    }
-
-    .box-1 .date-time {
-        color: white;
-        position: absolute;
-        font-size: 18px;
-        top: 0%;
-        left: 150%;
-        font-weight: 700;
-    }
-
-    .box-3 {
-        position: absolute;
-        width: 343px;
-        height: 47px;
-        left: 40px;
-        top: 525px;
-        background: rgb(0, 16, 38, 0.3);
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-    }
-
-    .box-2 .celsius-link {
-        position: absolute;
-        color: white;
-        font-weight: 700;
-        font-size: 30px;
-        left: 80%;
-        top: 125.5%;
-    }
-
-    .box-2 .fahrenheit-link {
-        position: absolute;
-        color: white;
-        font-weight: 700;
-        font-size: 30px;
-        left: 93%;
-        top: 125.5%;
-    }
-
-    .box-3 {
-        position: absolute;
-        width: 343px;
-        height: 47px;
-        left: 23.5px;
-        top: 520px;
-        background: rgb(0, 16, 38, 0.3);
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-    }
-
-    .box-4 {
-        position: absolute;
-        width: 343px;
-        height: 217px;
-        left: 23.5px;
-        top: 500px;
-    }
-
-    .box-4 .rectangle {
-        position: absolute;
-        width: 343px;
-        height: 217px;
-        margin-top: 25%;
-        background: rgb(0, 16, 38, 0.3);
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-    }
 }

@@ -1,42 +1,74 @@
-let dateElement = document.querySelector(".date-time");
-let currentTime = new Date();
-let hours = currentTime.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = currentTime.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let dayIndex = currentTime.getDay();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let monthIndex = currentTime.getMonth();
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let year = currentTime.getFullYear();
-let date = currentTime.getDate();
+function updateTime() {
+  let dateElement = document.querySelector(".date-time");
+  let currentTime = new Date();
+  let hours = currentTime.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = currentTime.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let seconds = currentTime.getSeconds();
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+  let dayIndex = currentTime.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let monthIndex = currentTime.getMonth();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let year = currentTime.getFullYear();
+  let date = currentTime.getDate();
+  let daytimeColors = "linear-gradient(to bottom, #F0F8FF, #87CEFA)";
+  let nighttimeColors = "linear-gradient(to bottom, #00458e, #000328)";
+  let daytimeText = "black";
+  let nighttimeText = "white";
 
-dateElement.innerHTML = `${hours}:${minutes} ${days[dayIndex]} ${months[monthIndex]} ${date} ${year}`;
+  let isDaytime;
+  if (hours >= 6 && hours < 16) {
+    isDaytime = true;
+  } else {
+    isDaytime = false;
+  }
+
+  let container = document.querySelector(".container");
+  if (isDaytime) {
+    container.style.background = daytimeColors;
+    container.style.color = daytimeText;
+  } else {
+    container.style.background = nighttimeColors;
+    container.style.color = nighttimeText;
+  }
+
+  function addSuffixToDay(day) {
+    if (day % 10 === 1 && day !== 11) {
+      return day + "st";
+    } else if (day % 10 === 2 && day !== 12) {
+      return day + "nd";
+    } else if (day % 10 === 3 && day !== 13) {
+      return day + "rd";
+    } else {
+      return day + "th";
+    }
+  }
+
+  let dayWithSuffix = addSuffixToDay(date);
+
+  dateElement.innerHTML = `${hours}:${minutes}:${seconds} ${days[dayIndex]} ${months[monthIndex]} ${dayWithSuffix}, ${year}`;
+}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -107,12 +139,11 @@ function showForecast(response) {
 
   let forecastHTML = `<div class="rectangle">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 4) {
+    if (index < 3) {
       forecastHTML =
         forecastHTML +
         ` <div class="card-weather">
             <h2 class="today">${formatDay(forecastDay.dt)}</h2>
-            <h3>${Math.round(forecastDay.main.temp)}&deg;C</h3>
             <img src="https://openweathermap.org/img/wn/${
               forecastDay.weather[0].icon
             }@2x.png" alt="" />
@@ -127,8 +158,8 @@ function showForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let api = "03de31d04fb70d99511816e779098e29";
-  let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${api}&units=metric`;
+  let api = "93d43dfe3b4a950e5b187e5dc313705e";
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${api}&units=metric`;
   console.log(url);
   axios.get(url).then(showForecast);
   console.log(url);
@@ -166,3 +197,4 @@ let celsius = document.querySelector(".celsius");
 celsius.addEventListener("click", CelsiusTemperature);
 
 showLocalWeather();
+setInterval(updateTime, 1000);

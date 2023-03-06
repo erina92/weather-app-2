@@ -26,6 +26,12 @@
       integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="img/style.css" />
     <title>Weather App</title>
   </head>
@@ -51,51 +57,51 @@
           </button>
         </form>
         <h3 class="date-time"></h3>
-        <p class="city">Taranto</p>
+        <p class="city"></p>
       </div>
       <div class="box-2">
-        <img src="img/Day_Sun.png" alt="" class="weather-icon" />
-        <div><h1 class="degrees">28&deg;</h1></div>
-        <h3 class="description">Sunny</h3>
-        <p class="celsius"><a href="#" target="_blank">&degC</a></p>
-        <p class="fahrenheit">
-          <a href="#" target="_blank">&degF</a>
-        </p>
-        <p class="precipitations">Weather Conditions</p>
-        <p class="min-max">
-          <i class="fa-solid fa-temperature-arrow-up"></i>:
-          <span class="max">31</span>
-          <i class="fa-solid fa-temperature-arrow-down"></i>:
-          <span class="min">25</span>
-        </p>
+        <div class="icon">
+          <img src="#" alt="" class="weather-icon" />
+        </div>
+        <div class="deg">
+          <h1 class="degrees"></h1>
+          <div class="temp">
+            <p class="celsius"><a href="#" target="_blank">&degC</a></p>
+            <p class="fahrenheit">
+              <a href="#" target="_blank">&degF</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="description"></h3>
+        </div>
+        <div class="high-low-temp">
+          <p class="precipitations">Weather Temperatures</p>
+          <p class="min-max">
+            <i class="fa-solid fa-temperature-arrow-up"></i>:
+            <span class="max"></span>
+            <i class="fa-solid fa-temperature-arrow-down"></i>:
+            <span class="min"></span>
+          </p>
+        </div>
       </div>
       <div class="box-3">
-        <i class="fa-solid fa-wind"></i>
-        <span class="wind">:</span>
-        <i class="fa-solid fa-temperature-full"></i>
-        <span class="pressure">:</span>
-        <i class="fa-solid fa-droplet"></i>
-        <span class="humidity">:</span>
+        <div class="conditions">
+          <i class="fa-solid fa-wind"></i>
+          <span class="wind">:</span>
+          <i class="fa-solid fa-temperature-full"></i>
+          <span class="pressure">:</span>
+          <i class="fa-solid fa-droplet"></i>
+          <span class="humidity">:</span>
+        </div>
       </div>
       <div class="box-4">
         <div class="rectangle">
           <div class="card-weather">
-            <h2 class="today">Sunday</h2>
-            <h3>20&degC</h3>
-            <img src="img/Day_Rain.png" alt="" />
-            <p class="temperatures">13&deg 10&deg</p>
-          </div>
-          <div class="card-weather-one">
-            <h2 class="second-day">Monday</h2>
-            <h3>20&degC</h3>
-            <img src="img/Day_Wind.png" alt="" />
-            <p class="temperatures">13&deg 10&deg</p>
-          </div>
-          <div class="card-weather-two">
-            <h2 class="third-day">Tuesday</h2>
-            <h3>20&degC</h3>
-            <img src="img/Day_Wind.png" alt="" />
-            <p class="temperatures">13&deg 10&deg</p>
+            <h2 class="today"></h2>
+            <h3></h3>
+            <img src="#" alt="" />
+            <p class="temperatures"></p>
           </div>
         </div>
       </div>
