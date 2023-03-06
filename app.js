@@ -14,7 +14,15 @@ function updateTime() {
     seconds = `0${seconds}`;
   }
   let dayIndex = currentTime.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let monthIndex = currentTime.getMonth();
   let months = [
     "January",
