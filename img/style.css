@@ -34,32 +34,31 @@ form {
 .search {
     border: none;
     background: transparent;
-    color: black;
+    color: white;
 }
 
 #current-location {
     border: none;
     background: transparent;
-    color: black;
+    color: white;
 }
 
 input {
     width: 100%;
     background: transparent;
-    border: none
+    border: none;
 }
 
 input:focus {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
     outline: none;
 }
 
 ::placeholder {
-    color: black;
+    color: white;
 }
 
 .date-time {
-    color: black;
     font-size: 20px;
     text-decoration: underline;
     font-weight: bold;
@@ -67,7 +66,6 @@ input:focus {
 }
 
 .city {
-    color: black;
     font-size: 40px;
     font-weight: bold;
     margin: 0 auto;
@@ -100,7 +98,6 @@ input:focus {
 .deg .degrees {
     font-size: 55px;
     font-weight: bold;
-    color: black;
 }
 
 .box-2 .temp {
@@ -125,7 +122,7 @@ input:focus {
 .celsius a,
 .fahrenheit a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .celsius a:hover,
@@ -140,7 +137,6 @@ input:focus {
 }
 
 .box-2 .description {
-    color: black;
     font-weight: bold;
 }
 
@@ -149,7 +145,6 @@ input:focus {
 }
 
 .box-2 .precipitations {
-    color: black;
     text-decoration: underline;
     font-weight: bold;
 }
@@ -160,7 +155,6 @@ input:focus {
 }
 
 .box-2 .min-max {
-    color: black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -185,7 +179,6 @@ input:focus {
     align-items: center;
     font-size: 15px;
     font-weight: 600;
-    color: black;
     gap: 20px;
 }
 
@@ -213,7 +206,6 @@ input:focus {
 }
 
 .box-4 .card-weather h2 {
-    color: black;
     font-size: 20px;
     font-weight: bold;
     text-decoration: underline;
@@ -221,7 +213,6 @@ input:focus {
 
 
 .box-4 .card-weather .temperatures {
-    color: black;
     font-size: 18px;
     font-weight: bold;
 }
@@ -236,14 +227,9 @@ input:focus {
 }
 
 .box-5 .coder {
-    color: black;
     text-align: center;
     font-weight: bold;
     text-decoration: underline;
-}
-
-.box-5 .fa-github {
-    color: black;
 }
 
 fa-github:hover {
