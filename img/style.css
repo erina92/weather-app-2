@@ -34,13 +34,12 @@ form {
 .search {
     border: none;
     background: transparent;
-    color: white;
 }
 
 #current-location {
     border: none;
     background: transparent;
-    color: white;
+    ;
 }
 
 input {
@@ -50,12 +49,8 @@ input {
 }
 
 input:focus {
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid;
     outline: none;
-}
-
-::placeholder {
-    color: white;
 }
 
 .date-time {
@@ -122,7 +117,6 @@ input:focus {
 .celsius a,
 .fahrenheit a {
     text-decoration: none;
-    color: white;
 }
 
 .celsius a:hover,
