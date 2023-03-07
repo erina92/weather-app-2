@@ -106,7 +106,7 @@ function showWeather(response) {
   let icon = document.querySelector(".weather-icon");
   icon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
   );
   description.setAttribute("alt", response.data.weather.description);
 
