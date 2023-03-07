@@ -76,7 +76,7 @@ input:focus {
 }
 
 .box-2 img {
-    display: flex;
+    display: block;
     margin: 0 auto;
 }
 
