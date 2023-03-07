@@ -4,8 +4,6 @@ html {
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
     background: linear-gradient(167.44deg, #08244F 0%, #134CB5 47.38%, #0B42AB 100%);
     position: relative;
     padding: 0px;
@@ -77,6 +75,7 @@ input:focus {
 
 .box-2 img {
     display: block;
+    width: 80%;
     margin: 0 auto;
 }
 
