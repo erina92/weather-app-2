@@ -248,4 +248,10 @@ fa-github:hover {
         margin: 0 auto;
         overflow-x: hidden;
     }
+
+    .search,
+    #current-location,
+    a {
+        color: black;
+    }
 }
