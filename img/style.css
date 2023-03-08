@@ -6,8 +6,7 @@ html {
 
 .container {
     background: linear-gradient(167.44deg, #08244F 0%, #134CB5 47.38%, #0B42AB 100%);
-    position: relative;
-    padding: 0px;
+    margin: 0 auto;
     font-family: 'Space Grotesk', sans-serif;
     height: 100vh;
 }
@@ -246,6 +245,7 @@ fa-github:hover {
     .container {
         width: 100vw;
         height: 100vh;
-        margin: 0;
+        margin: 0 auto;
+        overflow-x: hidden;
     }
 }
