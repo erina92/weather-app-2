@@ -88,7 +88,7 @@ function formatDay(timestamp) {
 
 function showWeather(response) {
   let temp = Math.round(response.data.main.temp);
-  document.querySelector(".degrees").innerHTML = `${temp}°C`;
+  document.querySelector(".degrees").innerHTML = `${temp}°`;
   document.querySelector(".city").innerHTML = response.data.name;
   let description = document.querySelector(".description");
   document.querySelector(".description").innerHTML =
