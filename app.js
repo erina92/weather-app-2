@@ -40,7 +40,7 @@ function updateTime() {
   ];
   let year = currentTime.getFullYear();
   let date = currentTime.getDate();
-  let daytimeColors = "linear-gradient(to bottom, #F0F8FF, #87CEFA)";
+  let daytimeColors = "linear-gradient(to bottom, #DBE9FA, #87CEFA)";
   let nighttimeColors = "linear-gradient(to bottom, #00458e, #000328)";
   let daytimeText = "black";
   let nighttimeText = "white";
