@@ -1,257 +1,263 @@
-body,
-html {
-    box-sizing: border-box;
-    height: 100vh;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 .container {
-    background: linear-gradient(167.44deg, #08244F 0%, #134CB5 47.38%, #0B42AB 100%);
-    margin: 0 auto;
-    font-family: 'Space Grotesk', sans-serif;
-    height: 100vh;
+  background: linear-gradient(
+    167.44deg,
+    #08244f 0%,
+    #134cb5 47.38%,
+    #0b42ab 100%
+  );
+  margin: 0 auto;
+  font-family: "Space Grotesk", sans-serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .box-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex: 1;
 }
 
 form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    flex: 1;
-    width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex: 1;
+  width: 70%;
 }
 
 .search {
-    border: none;
-    background: transparent;
+  border: none;
+  background: transparent;
 }
 
 #current-location {
-    border: none;
-    background: transparent;
+  border: none;
+  background: transparent;
 }
 
 input {
-    width: 100%;
-    background: transparent;
-    border: none;
+  width: 100%;
+  background: transparent;
+  border: none;
 }
 
 input:focus {
-    border-bottom: 3px solid;
-    outline: none;
+  border-bottom: 3px solid;
+  outline: none;
 }
 
 .date-time {
-    font-size: 20px;
-    text-decoration: underline;
-    font-weight: bold;
-    margin: 0 auto;
+  font-size: 20px;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 0 auto;
 }
 
 .city {
-    font-size: 40px;
-    font-weight: bold;
-    margin: 0 auto;
-
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 auto;
 }
 
 .box-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
-.box-2 img {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
+.box-2 .weather-icon {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .box-2 .deg {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
 }
 
 .deg .degrees {
-    font-size: 55px;
-    font-weight: bold;
+  font-size: 55px;
+  font-weight: bold;
 }
 
 .box-2 .temp {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    gap: 10px;
-    font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  gap: 10px;
+  font-size: 25px;
 }
 
-.temp .ceslius,
+.temp .celsius,
 .fahrenheit {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    row-gap: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1em;
 }
 
 .celsius a,
 .fahrenheit a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .celsius a:hover,
 .fahrenheit a:hover {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .celsius a:visited,
 .fahrenheit a:visited {
-    color: black;
+  color: black;
 }
 
 .box-2 .description {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .box-2 .description::first-letter {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .box-2 .precipitations {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .box-2 .min-max {
-    display: flex;
-    gap: 10px;
-}
-
-.box-2 .min-max {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
 }
 
 .box-3 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border-radius: 20px;
-    flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 20px;
+  flex: 1;
 }
 
 .box-3 .conditions {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 600;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  gap: 20px;
 }
 
 .box-4 {
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
+  margin-top: 10px;
 }
 
 .box-4 .rectangle {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .box-4 .card-weather {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center !important;
-    background: transparent;
-    width: 100%;
-    flex-wrap: wrap;
+  background: transparent;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
 }
 
 .box-4 .card-weather h2 {
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: underline;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-
 .box-4 .card-weather .temperatures {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.box-4 .card-weather .forecast-icon {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .box-5 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
 }
 
 .box-5 .coder {
-    text-align: center;
-    font-weight: bold;
-    text-decoration: underline;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 fa-github:hover {
-    color: yellow;
+  color: yellow;
 }
 
-@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  body,
+  html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    body,
-    html {
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        box-sizing: border-box;
-    }
+  .date-time {
+    font-size: 16px;
+  }
 
-    .date-time {
-        font-size: 16px;
-    }
+  .container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
 
-    .container {
-        width: 100vw;
-        height: 100vh;
-        margin: 0 auto;
-        overflow-x: hidden;
-    }
-
-    .search,
-    #current-location,
-    a {
-        color: black;
-    }
+  .search,
+  #current-location,
+  a {
+    color: black;
+  }
 }
