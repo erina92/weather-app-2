@@ -6,7 +6,10 @@ body {
   padding: 0;
   margin: 0;
 }
-
+html {
+  width: 100%;
+  height: 100%;
+}
 .container {
   background: linear-gradient(
     167.44deg,
@@ -17,7 +20,7 @@ body {
   margin: 0 auto;
   font-family: "Space Grotesk", sans-serif;
   height: 100vh;
-  overflow: hidden;
+  width: 100%;
 }
 
 .box-1 {
@@ -48,7 +51,23 @@ form {
   border: none;
   background: transparent;
 }
+/* Daytime placeholder color */
+.placeholder-day::placeholder {
+  color: black;
+}
+/* Nighttime placeholder color */
+.placeholder-night::placeholder {
+  color: white;
+}
 
+/* Daytime placeholder color */
+.placeholder-day:focus {
+  color: black;
+}
+/* Nighttime placeholder color */
+.placeholder-night:focus {
+  color: white;
+}
 input {
   width: 100%;
   background: transparent;
@@ -62,7 +81,6 @@ input:focus {
 
 .date-time {
   font-size: 20px;
-  text-decoration: underline;
   font-weight: bold;
   margin: 0 auto;
 }
@@ -178,28 +196,33 @@ input:focus {
   font-weight: 600;
   gap: 20px;
 }
-
+.forecast-header {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+}
 .box-4 {
-  margin-top: 10px;
+  margin: 0 0 50px 0;
 }
 .box-4 .rectangle {
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-weather {
+  text-align: center;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.box-4 .card-weather {
-  background: transparent;
-  display: flex;
-  align-items: center;
   width: 100%;
-  flex-grow: 1;
   justify-content: center;
 }
 
-.box-4 .card-weather h2 {
+.card-weather h2 {
   font-size: 20px;
   font-weight: bold;
   margin: 0 auto;
@@ -229,11 +252,35 @@ input:focus {
 .box-5 .coder {
   text-align: center;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 fa-github:hover {
   color: yellow;
+}
+
+@media only screen and (device-width: 768px) and (device-height: 1024px) {
+  body,
+  html {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .box-4 {
+    margin: 0 auto;
+  }
+
+  .box-4 .rectangle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  .box-5 .coder {
+    font-size: 20px;
+    margin: 20px 0 0 0;
+  }
 }
 
 @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
@@ -256,17 +303,44 @@ fa-github:hover {
     overflow: hidden;
   }
 
+  .box-2 .weather-icon {
+    width: 40%;
+  }
+  .forecast-header {
+    text-align: center;
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+  }
+  .box-4 {
+    margin-bottom: 10px;
+  }
+  .box-4 .rectangle {
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .box-4 .card-weather {
+    border-radius: 10%;
+    border: 1px solid black;
+    padding: 0.5rem;
+  }
   .weather-icon {
     width: 60%;
   }
 
   .forecast-icon {
-    width: 20%;
+    width: 70%;
   }
 
   .search,
   #current-location,
   a {
     color: black;
+  }
+
+  .box-5 .coder {
+    font-size: 15px;
+    margin: 0 auto;
   }
 }

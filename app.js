@@ -42,8 +42,10 @@ function updateTime() {
   let date = currentTime.getDate();
   let daytimeColors = "linear-gradient(to bottom, #DBE9FA, #87CEFA)";
   let nighttimeColors = "linear-gradient(to bottom, #00458e, #000328)";
-  let daytimeText = "black";
-  let nighttimeText = "white";
+  let daytimeText = "#000";
+  let nighttimeText = "#ffff";
+  let dayBorderColor = "#000";
+  let nightBorderColor = "#ffff";
 
   let isDaytime;
   if (hours >= 6 && hours < 16) {
@@ -60,6 +62,39 @@ function updateTime() {
     container.style.background = nighttimeColors;
     container.style.color = nighttimeText;
   }
+
+  let input = document.querySelector("#city-input");
+  if (isDaytime) {
+    input.classList.add("placeholder-day");
+    input.classList.remove("placeholder-night");
+  } else {
+    input.classList.add("placeholder-night");
+    input.classList.remove("placeholder-day");
+  }
+
+  let searchButton = document.querySelector(".search");
+  if (isDaytime) {
+    searchButton.style.color = nighttimeText;
+  } else {
+    searchButton.style.color = daytimeText;
+  }
+
+  let locationButton = document.querySelector("#current-location");
+  if (isDaytime) {
+    locationButton.style.color = nighttimeText;
+  } else {
+    locationButton.style.color = daytimeText;
+  }
+
+  let cardWeatherElements = document.querySelectorAll(".card-weather");
+
+  cardWeatherElements.forEach((card) => {
+    if (isDaytime) {
+      card.style.borderColor = dayBorderColor;
+    } else {
+      card.style.borderColor = nightBorderColor;
+    }
+  });
 
   function addSuffixToDay(day) {
     if (day % 10 === 1 && day !== 11) {
@@ -96,26 +131,54 @@ function formatDay(timestamp) {
 
 function showWeather(response) {
   let temp = Math.round(response.data.main.temp);
-  document.querySelector(".degrees").innerHTML = `${temp}°`;
+  document.querySelector(".degrees").innerHTML = `${temp}`;
   document.querySelector(".city").innerHTML = response.data.name;
+
   let description = document.querySelector(".description");
   document.querySelector(".description").innerHTML =
     response.data.weather[0].description;
+
   let minTemp = document.querySelector(".min");
   let maxTemp = document.querySelector(".max");
-  minTemp.innerHTML = Math.round(response.data.main.temp_min) + `º`;
-  maxTemp.innerHTML = Math.round(response.data.main.temp_max) + `º`;
+  minTemp.innerHTML = Math.round(response.data.main.temp_min) + `ºC`;
+  maxTemp.innerHTML = Math.round(response.data.main.temp_max) + `ºC`;
+
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = response.data.main.humidity + "%";
+
   let windSpeed = document.querySelector(".wind");
   windSpeed.innerHTML = response.data.wind.speed + " m/s";
+
   let pressure = document.querySelector(".pressure");
   pressure.innerHTML = response.data.main.pressure + " hPa";
+
+  let weatherIconCode = response.data.weather[0].icon;
+
+  let iconMapping = {
+    "01d": "clear-day.svg",
+    "01n": "clear-night.svg",
+    "02d": "cloudy.svg",
+    "02n": "partly-cloudy-night.svg",
+    "03d": "partly-cloudy-day.svg",
+    "03n": "partly-cloudy-night.svg",
+    "04d": "overcast.svg",
+    "04n": "overcast.svg",
+    "09d": "overcast-rain.svg",
+    "09n": "overcast-rain.svg",
+    "10d": "overcast-day-rain.svg",
+    "10n": "overcast-night-rain.svg",
+    "11d": "thunderstorms-day.svg",
+    "11n": "thunderstorms-night.svg",
+    "13d": "snow.svg",
+    "13n": "snow.svg",
+    "50d": "mist.svg",
+    "50n": "mist.svg",
+  };
+
+  let iconFileName = iconMapping[weatherIconCode];
+
   let icon = document.querySelector(".weather-icon");
-  icon.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`
-  );
+  icon.setAttribute("src", `img/${iconFileName}`);
   description.setAttribute("alt", response.data.weather.description);
 
   celsiusTemperature = response.data.main.temp;
@@ -153,16 +216,38 @@ function showForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector(".box-4");
 
+  let forecastIconMapping = {
+    "01d": "clear-day.svg",
+    "01n": "clear-night.svg",
+    "02d": "cloudy.svg",
+    "02n": "partly-cloudy-night.svg",
+    "03d": "partly-cloudy-day.svg",
+    "03n": "partly-cloudy-night.svg",
+    "04d": "overcast.svg",
+    "04n": "overcast.svg",
+    "09d": "overcast-rain.svg",
+    "09n": "overcast-rain.svg",
+    "10d": "overcast-day-rain.svg",
+    "10n": "overcast-night-rain.svg",
+    "11d": "thunderstorms-day.svg",
+    "11n": "thunderstorms-night.svg",
+    "13d": "snow.svg",
+    "13n": "snow.svg",
+    "50d": "mist.svg",
+    "50n": "mist.svg",
+  };
+
   let forecastHTML = `<div class="rectangle">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 3) {
+    if (index < 6) {
+      let weatherCondition = forecastDay.weather[0].icon;
+      let customForecastIcon = forecastIconMapping[weatherCondition];
+
       forecastHTML =
         forecastHTML +
         ` <div class="card-weather">
             <h2 class="today">${formatDay(forecastDay.dt)}</h2>
-            <img src="https://openweathermap.org/img/wn/${
-              forecastDay.weather[0].icon
-            }@2x.png" alt="" class="forecast-icon"/>
+            <img src="img/${customForecastIcon}" alt="" class="forecast-icon"/>
             <p class="temperatures">${Math.round(
               forecastDay.temp.max
             )}&deg; ${Math.round(forecastDay.temp.min)}&deg;</p>
