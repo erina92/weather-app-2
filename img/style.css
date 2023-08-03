@@ -275,7 +275,7 @@ fa-github:hover {
 
   .box-4 .rectangle {
     display: grid;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, 180px);
     gap: 5px;
   }
 
