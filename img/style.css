@@ -287,8 +287,6 @@ fa-github:hover {
   body,
   html {
     margin: 0 auto;
-    height: 100%;
-    width: 100%;
     box-sizing: border-box;
   }
 
@@ -297,10 +295,8 @@ fa-github:hover {
   }
 
   .container {
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
   }
 
   .box-2 .weather-icon {
