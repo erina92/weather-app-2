@@ -280,8 +280,8 @@ fa-github:hover {
 
   .box-4 .rectangle {
     display: grid;
-    grid-template-columns: repeat(3, 200px);
-    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
   }
 
   .box-4 .card-weather {
@@ -293,7 +293,7 @@ fa-github:hover {
     display: block;
     margin: 0 auto;
     padding: 0;
-    width: 50%;
+    width: 70%;
   }
 
   .box-5 .coder {
