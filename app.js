@@ -74,16 +74,16 @@ function updateTime() {
 
   let searchButton = document.querySelector(".search");
   if (isDaytime) {
-    searchButton.style.color = nighttimeText;
-  } else {
     searchButton.style.color = daytimeText;
+  } else {
+    searchButton.style.color = nighttimeText;
   }
 
   let locationButton = document.querySelector("#current-location");
   if (isDaytime) {
-    locationButton.style.color = nighttimeText;
-  } else {
     locationButton.style.color = daytimeText;
+  } else {
+    locationButton.style.color = nighttimeText;
   }
 
   let cardWeatherElements = document.querySelectorAll(".card-weather");
