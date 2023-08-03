@@ -280,13 +280,20 @@ fa-github:hover {
 
   .box-4 .rectangle {
     display: grid;
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(3, 200px);
     gap: 5px;
   }
 
   .box-4 .card-weather {
     border-radius: 10%;
     border: 1px solid black;
+  }
+
+  .forecast-icon {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
   }
 
   .box-5 .coder {
