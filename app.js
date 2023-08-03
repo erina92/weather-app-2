@@ -43,9 +43,11 @@ function updateTime() {
   let daytimeColors = "linear-gradient(to bottom, #DBE9FA, #87CEFA)";
   let nighttimeColors = "linear-gradient(to bottom, #00458e, #000328)";
   let daytimeText = "#000";
-  let nighttimeText = "#ffff";
+  let nighttimeText = "#fff";
   let dayBorderColor = "#000";
-  let nightBorderColor = "#ffff";
+  let nightBorderColor = "#fff";
+  let dayColor = "#000";
+  let nightColor = "#fff";
 
   let isDaytime;
   if (hours >= 6 && hours < 16) {
@@ -79,11 +81,11 @@ function updateTime() {
     searchButton.style.color = nighttimeText;
   }
 
-  let locationButton = document.querySelector("#current-location");
+  let locationIcon = document.querySelector(".location");
   if (isDaytime) {
-    locationButton.style.color = daytimeText;
+    locationIcon.style.color = dayColor;
   } else {
-    locationButton.style.color = nighttimeText;
+    locationIcon.style.color = nightColor;
   }
 
   let cardWeatherElements = document.querySelectorAll(".card-weather");
