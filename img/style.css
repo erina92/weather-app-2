@@ -283,7 +283,7 @@ fa-github:hover {
   }
 }
 
-@media only screen and (min-device-width: 414px) and (min-device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
   body,
   html {
     margin: 0 auto;
