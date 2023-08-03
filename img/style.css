@@ -312,7 +312,7 @@ fa-github:hover {
   }
   .box-4 .rectangle {
     justify-content: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 100px);
     gap: 10px;
   }
 
@@ -320,6 +320,14 @@ fa-github:hover {
     border-radius: 10%;
     border: 1px solid black;
     padding: 0.5rem;
+  }
+
+  .card-weather h2 {
+    font-size: 15px;
+  }
+
+  .temperatures {
+    font-size: 15px;
   }
   .weather-icon {
     width: 60%;
