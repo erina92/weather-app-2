@@ -88,6 +88,13 @@ function updateTime() {
     locationIcon.style.color = nightColor;
   }
 
+  let githubIcon = document.querySelector(".icon");
+  if (isDaytime) {
+    githubIcon.style.color = dayColor;
+  } else {
+    githubIcon.style.color = nightColor;
+  }
+
   let cardWeatherElements = document.querySelectorAll(".card-weather");
 
   cardWeatherElements.forEach((card) => {

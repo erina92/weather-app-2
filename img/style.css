@@ -258,23 +258,31 @@ fa-github:hover {
   color: yellow;
 }
 
-@media only screen and (device-width: 768px) and (device-height: 1024px) {
+@media only screen and (max-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   body,
   html {
     margin: 0 auto;
-    height: 100%;
-    width: 100%;
     box-sizing: border-box;
   }
 
+  .container {
+    width: 100%;
+    height: 100%;
+  }
   .box-4 {
     margin: 0 auto;
   }
 
   .box-4 .rectangle {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 200px);
     gap: 5px;
+  }
+
+  .box-4 .card-weather {
+    border-radius: 10%;
+    border: 1px solid black;
+    padding: 0.5rem;
   }
 
   .box-5 .coder {
@@ -283,7 +291,7 @@ fa-github:hover {
   }
 }
 
-@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (max-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
   body,
   html {
     margin: 0 auto;
@@ -335,12 +343,6 @@ fa-github:hover {
 
   .forecast-icon {
     width: 70%;
-  }
-
-  .search,
-  #current-location,
-  a {
-    color: black;
   }
 
   .box-5 .coder {
