@@ -265,6 +265,11 @@ fa-github:hover {
     box-sizing: border-box;
   }
 
+  /* Set box-sizing property globally */
+  * {
+    box-sizing: border-box;
+  }
+
   .container {
     width: 100%;
     height: 100%;
@@ -297,6 +302,9 @@ fa-github:hover {
     box-sizing: border-box;
   }
 
+  * {
+    box-sizing: border-box;
+  }
   .date-time {
     font-size: 16px;
   }
