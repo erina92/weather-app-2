@@ -373,7 +373,7 @@ fa-github:hover {
 }
 
 @media only screen
-  and (min-device-width: 481px)   /* Medium to large smartphones */
+  and (min-device-width: 375px)   /* Medium to large smartphones */
   and (max-device-width: 767px) {
     body,
   html {
