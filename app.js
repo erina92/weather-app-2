@@ -15,13 +15,13 @@ function updateTime() {
   }
   let dayIndex = currentTime.getDay();
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
   ];
   let monthIndex = currentTime.getMonth();
   let months = [
